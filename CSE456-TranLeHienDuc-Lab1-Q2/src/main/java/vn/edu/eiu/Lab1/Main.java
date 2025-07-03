@@ -25,6 +25,16 @@ public class Main {
             //Tạo Class PreparedStatement để thực hiện câu truy vấn.
             PreparedStatement pstmt = conn.prepareStatement("select * from Student");
 
+            // Insert data to the database
+            String sql = "INSERT INTO Student VALUES (?,?,?,?,?)";
+            PreparedStatement pstmt1 = conn.prepareStatement(sql);
+            pstmt1.setString(1, "S005");
+            pstmt1.setString(2, "Le");
+            pstmt1.setString(3, "Tran");
+            pstmt1.setInt(4, 2000);
+            pstmt1.setDouble(5, 3.5);
+            pstmt1.executeUpdate();
+
             ResultSet rs = pstmt.executeQuery();
 //            while (rs.next()) {
 //                System.out.print(rs.getString(1));
