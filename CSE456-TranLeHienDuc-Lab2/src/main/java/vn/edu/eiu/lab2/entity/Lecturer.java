@@ -14,7 +14,7 @@ public class Lecturer {
 
     @Id
     @Column(name = "Id")
-    private Long id;
+    private String id;
 
     @Column(name = "Name", length = 50, nullable = false)
     private String name;
